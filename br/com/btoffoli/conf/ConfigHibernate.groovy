@@ -1,10 +1,12 @@
 package br.com.btoffoli.conf
 
+import org.hibernate.SessionFactory
+
 import javax.persistence.*
 import org.hibernate.cfg.*
+import  br.com.btoffoli.utils.UtilsReflection
 
-
-class Config {
+class ConfigHibernate {
 	def props = [
 	    //"hibernate.dialect": "org.hibernate.dialect.HSQLDialect",
 	    "hibernate.dialect": "org.hibernate.dialect.PostgreSQLDialect",
@@ -93,4 +95,13 @@ class Config {
 	    }
 	    return config
 	}
+
+    SessionFactory config() {
+
+        List<Class> domainClasses = new UtilsReflection().listarClassesDeDominio()
+
+        SessionFactory factory = configureHibernate(domainClasses).buildSessionFactory()
+
+
+    }
 }
