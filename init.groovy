@@ -1,4 +1,5 @@
 @Grapes([
+@Grab(group='org.liquibase', module='liquibase-core', version='3.0.7'),
 @Grab(group = 'org.hibernate', module = 'hibernate-annotations', version = '3.4.0.GA'),
 //@Grab(group='org.hibernate', module='hibernate-core', version='4.2.6.Final'),
 @Grab(group = 'org.slf4j', module = 'slf4j-simple', version = '1.4.2'),

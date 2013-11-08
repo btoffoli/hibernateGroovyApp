@@ -8,14 +8,12 @@ package br.com.btoffoli.conf
  * To change this template use File | Settings | File Templates.
  */
 import br.com.btoffoli.utils.UtilsReflection
-
 import br.com.btoffoli.resource.Resource
 
 
 class ConfigApp {
 
     static void config() {
-        Resource.sessionFactory = new br.com.btoffoli.conf.ConfigHibernate().config()
-
+        Resource.sessionFactory = new ConfigHibernate().config()
     }
 }
